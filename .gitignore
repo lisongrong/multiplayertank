@@ -1,0 +1,6 @@
+*.DS_Store
+nohup.out
+proj.android/gen/
+proj.android/bin/
+proj.android/obj/
+proj.android/assets/
