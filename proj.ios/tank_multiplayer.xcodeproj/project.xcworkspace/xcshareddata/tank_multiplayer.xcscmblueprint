@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "381E6747E20A1E904BE0E62683AA9042EC2D4E44",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8CFAC435D02264EBD2FF387C3514AEDDAE9B3CFA" : 0,
+    "381E6747E20A1E904BE0E62683AA9042EC2D4E44" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "106CCE5A-73FA-4E3C-99BA-12CC042D2050",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8CFAC435D02264EBD2FF387C3514AEDDAE9B3CFA" : "..",
+    "381E6747E20A1E904BE0E62683AA9042EC2D4E44" : "tank_multiplayer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "tank_multiplayer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "proj.ios\/tank_multiplayer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lisongrong\/multiplayertank.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "381E6747E20A1E904BE0E62683AA9042EC2D4E44"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.0.37:\/opt\/git\/cocos2dx_2_2_6",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8CFAC435D02264EBD2FF387C3514AEDDAE9B3CFA"
+    }
+  ]
+}

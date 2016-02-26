@@ -40,7 +40,7 @@
 }
 
 - (BOOL) shouldAutorotate {
-    return YES;
+    return NO;
 }
 
 //fix not hide status on ios7

@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "AdapteHelper.hpp"
+#include "GameScene.hpp"
 
 USING_NS_CC;
 
@@ -24,8 +25,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
+    // AdapteHelper
+    AdapteHelper::registScreenProfile(pDirector->getWinSize());
+    
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = GameScene::scene();
 
     // run
     pDirector->runWithScene(pScene);
