@@ -8,6 +8,8 @@
 
 #include "TankEntity.hpp"
 #include "Display.hpp"
+#include "BulletEntity.hpp"
+#include "MapManager.hpp"
 
 TankEntity* TankEntity::create(MapManager* mapManager)
 {
@@ -68,5 +70,10 @@ void TankEntity::updateTransform(float dt)
 
 void TankEntity::fire()
 {
-    CCLOG("tank: fire()");
+//    CCLOG("tank: fire()");
+    BulletEntity* bullet = BulletEntity::create(_mapManager);
+    _mapManager->addChild(bullet);
+    _mapManager->addBullet(bullet);
+    bullet->setPosition(this->getPosition());
+    bullet->shoot(_fireComponent->getSpeedByDirection(500, _dir));
 }

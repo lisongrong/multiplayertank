@@ -54,3 +54,20 @@ void FireComponent::updateTransform(float dt)
         _delegate->fire();
     }
 }
+
+// public interface
+CCPoint FireComponent::getSpeedByDirection(float speed, EDirection dir)
+{
+    CCPoint pSpeed;
+    
+    if(dir == EDirection_Up)
+        pSpeed.y = 1;
+    else if(dir == EDirection_Down)
+        pSpeed.y = -1;
+    else if(dir == EDirection_Left)
+        pSpeed.x = -1;
+    else if(dir == EDirection_Right)
+        pSpeed.x = 1;
+    
+    return pSpeed * speed;
+}

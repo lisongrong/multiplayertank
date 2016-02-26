@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 USING_NS_CC;
+#include "Config.h"
 
 class FireComponentDelegate
 {
@@ -26,6 +27,10 @@ public:
     
     void updateTransform(float dt);
     
+    // public interface
+    CCPoint getSpeedByDirection(float speed, EDirection dir);
+    
+    // get && set
     inline void setFireInterval(float interval) { _time_interval = interval;}
     
 protected:
