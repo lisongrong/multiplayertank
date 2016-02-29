@@ -243,6 +243,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		600197C61C809AEE00F39164 /* MoveComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 600197C41C809AEE00F39164 /* MoveComponent.cpp */; };
+		600197CC1C80A19100F39164 /* PanelDirectionControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 600197CA1C80A19100F39164 /* PanelDirectionControl.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -787,6 +789,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		37C62C0718E156AE00D16FC4 /* ExtensionExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionExport.h; sourceTree = "<group>"; };
+		600197C41C809AEE00F39164 /* MoveComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveComponent.cpp; sourceTree = "<group>"; };
+		600197C51C809AEE00F39164 /* MoveComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MoveComponent.hpp; sourceTree = "<group>"; };
+		600197CA1C80A19100F39164 /* PanelDirectionControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelDirectionControl.cpp; sourceTree = "<group>"; };
+		600197CB1C80A19100F39164 /* PanelDirectionControl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PanelDirectionControl.hpp; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -1351,6 +1357,7 @@
 				CE3D26AC1C803F7A00BCFBDE /* Config */,
 				CE3D26961C803D1B00BCFBDE /* Helper */,
 				CE3D268F1C803AA100BCFBDE /* Entity */,
+				600197C81C80A15D00F39164 /* UI Widget */,
 				CE3D268B1C8039A000BCFBDE /* View */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
@@ -1962,6 +1969,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		600197C71C80A14C00F39164 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D268C1C8039AC00BCFBDE /* GameScene.cpp */,
+				CE3D268D1C8039AC00BCFBDE /* GameScene.hpp */,
+			);
+			name = GameScene;
+			sourceTree = "<group>";
+		};
+		600197C81C80A15D00F39164 /* UI Widget */ = {
+			isa = PBXGroup;
+			children = (
+				600197C91C80A16900F39164 /* Panel */,
+			);
+			name = "UI Widget";
+			sourceTree = "<group>";
+		};
+		600197C91C80A16900F39164 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				600197CA1C80A19100F39164 /* PanelDirectionControl.cpp */,
+				600197CB1C80A19100F39164 /* PanelDirectionControl.hpp */,
+			);
+			name = Panel;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1977,8 +2010,7 @@
 		CE3D268B1C8039A000BCFBDE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE3D268C1C8039AC00BCFBDE /* GameScene.cpp */,
-				CE3D268D1C8039AC00BCFBDE /* GameScene.hpp */,
+				600197C71C80A14C00F39164 /* GameScene */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2108,6 +2140,8 @@
 			children = (
 				CE3D26C21C804FAA00BCFBDE /* FireComponent.cpp */,
 				CE3D26C31C804FAA00BCFBDE /* FireComponent.hpp */,
+				600197C41C809AEE00F39164 /* MoveComponent.cpp */,
+				600197C51C809AEE00F39164 /* MoveComponent.hpp */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -2339,6 +2373,7 @@
 				15A3DA3B1682F826002FB0C5 /* CCLabelBMFontLoader.cpp in Sources */,
 				CE3D26BE1C804BE400BCFBDE /* BulletEntity.cpp in Sources */,
 				15C0B556196D412F007F909D /* CCArmatureAnimation.cpp in Sources */,
+				600197C61C809AEE00F39164 /* MoveComponent.cpp in Sources */,
 				15C0B568196D412F007F909D /* CCUtilMath.cpp in Sources */,
 				15A3DA3C1682F826002FB0C5 /* CCLabelTTFLoader.cpp in Sources */,
 				15C0B572196D412F007F909D /* CocosGUI.cpp in Sources */,
@@ -2426,6 +2461,7 @@
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
 				CE3D26A11C803D4A00BCFBDE /* FileManager.cpp in Sources */,
+				600197CC1C80A19100F39164 /* PanelDirectionControl.cpp in Sources */,
 				15C0B567196D412F007F909D /* CCTweenFunction.cpp in Sources */,
 				15C0B58B196D412F007F909D /* LabelReader.cpp in Sources */,
 				CE3D26B21C8041A400BCFBDE /* TankEntity.cpp in Sources */,

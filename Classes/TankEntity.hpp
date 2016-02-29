@@ -12,6 +12,8 @@
 #include "Entity.hpp"
 #include "FireComponent.hpp"
 
+class MoveComponent;
+
 class TankEntity : public Entity, public FireComponentDelegate
 {
 public:
@@ -30,10 +32,12 @@ protected:
     
     void addDisplay();
     void addFireComponent();
+    void addMoveComponent();
     
 protected:
     
     FireComponent* _fireComponent;
+    MoveComponent* _moveComponent;
 };
 
 #endif /* TankEntity_hpp */

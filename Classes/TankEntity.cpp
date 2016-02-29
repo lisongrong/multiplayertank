@@ -10,6 +10,7 @@
 #include "Display.hpp"
 #include "BulletEntity.hpp"
 #include "MapManager.hpp"
+#include "MoveComponent.hpp"
 
 TankEntity* TankEntity::create(MapManager* mapManager)
 {
@@ -24,6 +25,8 @@ TankEntity* TankEntity::create(MapManager* mapManager)
 }
 
 TankEntity::TankEntity()
+: _fireComponent(NULL)
+, _moveComponent(NULL)
 {
     
 }
@@ -41,6 +44,7 @@ bool TankEntity::init(MapManager* mapManager)
         
         this->addDisplay();
         this->addFireComponent();
+        this->addMoveComponent();
         
         return true;
     }
@@ -59,7 +63,15 @@ void TankEntity::addFireComponent()
 {
     _fireComponent = FireComponent::create(this);
     this->addChild(_fireComponent);
-    _fireComponent->setFireInterval(0.5f);
+    _fireComponent->setFireInterval(1.5f);
+}
+
+void TankEntity::addMoveComponent()
+{
+    _moveComponent = MoveComponent::create(this);
+    this->addChild(_moveComponent);
+    _moveComponent->setSpeedDirection(_dir);
+    _moveComponent->setSpeedValue(100.0f);
 }
 
 // override
@@ -75,5 +87,5 @@ void TankEntity::fire()
     _mapManager->addChild(bullet);
     _mapManager->addBullet(bullet);
     bullet->setPosition(this->getPosition());
-    bullet->shoot(_fireComponent->getSpeedByDirection(500, _dir));
+    bullet->shoot(300, _dir);
 }

@@ -27,9 +27,6 @@ public:
     
     void updateTransform(float dt);
     
-    // public interface
-    CCPoint getSpeedByDirection(float speed, EDirection dir);
-    
     // get && set
     inline void setFireInterval(float interval) { _time_interval = interval;}
     

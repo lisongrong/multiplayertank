@@ -8,6 +8,8 @@
 
 #include "BulletEntity.hpp"
 #include "Display.hpp"
+#include "MoveComponent.hpp"
+#include "MapManager.hpp"
 
 BulletEntity* BulletEntity::create(MapManager* mapManager)
 {
@@ -22,6 +24,7 @@ BulletEntity* BulletEntity::create(MapManager* mapManager)
 }
 
 BulletEntity::BulletEntity()
+: _moveComponent(NULL)
 {
     
 }
@@ -35,16 +38,43 @@ bool BulletEntity::init(MapManager* mapManager)
 {
     if(Entity::init(mapManager))
     {
-        _display = Display::createSprite("Bullet/bullet.png");
-        this->addChild(_display);
+        this->addDisplay();
+        this->addMoveComponent();
         
         return true;
     }
     return false;
 }
 
-void BulletEntity::shoot(cocos2d::CCPoint speed)
+void BulletEntity::addDisplay()
+{
+    _display = Display::createSprite("Bullet/bullet.png");
+    this->addChild(_display);
+}
+
+void BulletEntity::addMoveComponent()
+{
+    _moveComponent = MoveComponent::create(this);
+    this->addChild(_moveComponent);
+}
+
+// override
+void BulletEntity::updateTransform(float dt)
+{
+    _moveComponent->updateTransform(dt);
+    CCPoint pos = this->getPosition();
+    
+    if(pos.x < 0 || pos.y < 0 || pos.x > _mapManager->getContentSize().width || pos.y > _mapManager->getContentSize().height)
+    {
+        this->removeFromParent();
+        _mapManager->removeBullet(this);
+    }
+}
+
+void BulletEntity::shoot(float speed, EDirection dir)
 {
     // TODO: Speed Component
-    this->runAction(CCMoveBy::create(1, speed));
+    _moveComponent->setSpeedValue(speed);
+    _moveComponent->setSpeedDirection(dir);
+    _moveComponent->start();
 }
